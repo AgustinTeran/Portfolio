@@ -1,0 +1,42 @@
+// Constantes
+
+
+
+// Importaciones
+@import "./components/nav";
+@import "./components/about";
+@import "./components/education.scss";
+@import "./components/proyects";
+@import "./components/technologies";
+@import "./components/contact";
+
+
+
+// Global
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+
+    
+    body{
+        font-family: Arial;
+    
+        .section{
+            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    
+        h3{
+            font-size: 26px;
+            margin-bottom: 16px;
+            padding-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.educationContainer{
+
+    .education{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        div{
+            flex: 1 1;
+            margin-top: 20px;
+            min-width: 300px;
+            max-width: 350px;
+            text-align: center;
+
+            h4{
+                font-size: 21px;
+            }
+            img{
+                width: 98%;
+                // max-height: 450px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin: 1%;
+                height: 250px;
+            }
+        }
+    }
+
+
+}
