@@ -16,11 +16,7 @@ export default function About(){
             <div className="section sobreMi">
                 <h3>Sobre Mí</h3>
                 <p>
-                    Tengo 19 años, soy Full Stack Web Developer
-                egresado del bootcamp Soy Henry. Durante la
-                cursada acumulé +800hs teórico/practico como
-                desarrollador web. Siempre con ganas de
-                aprender y de mejorar.
+                Tengo 19 años. Egresado del Colegio Apdes Pucara y del bootcamp Soy Henry como Full Stack Web Developer. Experiencia en el desarrollo de SPA (Single Page Applications) y API REST de manera individual y grupal. Conocimiento en conexión Frontend - Backend mediante Axios o Fetch, y conexión de servidor con base de datos mediante un ORM como Sequelize. Entendimiento del Gitflow y de metodologías agiles como SCRUM. Siempre estoy intentando mejorar y aprender. 
                 </p>
             </div>
 
