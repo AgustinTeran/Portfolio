@@ -1,6 +1,6 @@
 import React from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import CV from "../assets/AgustinTeran-Javascript.pdf";
+import CV from "../assets/AgustinTeran-Javascript.docx";
 
 export default function About(){
     return (
