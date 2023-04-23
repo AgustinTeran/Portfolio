@@ -8,12 +8,15 @@ var arrayTecnologias = [
     "React",
     "Redux",
     "SCSS",
+    "Tailwind",
+    "DaisyUI",
     "Express",
     "Node.js",
     "Sequelize",
     "PostgreSQL",
     "SQL",
-    "Git - Github"
+    "Git",
+    "Github"
 ]
 
 export default function Technologies(){

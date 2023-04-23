@@ -1,6 +1,7 @@
 import React from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import CV from "../assets/AgustinTeran-Javascript.docx";
+import CV from "../assets/AgustinTeran-Javascript.pdf";
+import { Link } from "react-router-dom";
 
 export default function About(){
     return (
@@ -16,7 +17,7 @@ export default function About(){
             <div className="section sobreMi">
                 <h3>Sobre Mí</h3>
                 <p>
-                Tengo 19 años. Egresado del Colegio Apdes Pucara y del bootcamp Soy Henry como Full Stack Web Developer. Experiencia en el desarrollo de SPA (Single Page Applications) y API REST de manera individual y grupal. Conocimiento en conexión Frontend - Backend mediante Axios o Fetch, y conexión de servidor con base de datos mediante un ORM como Sequelize. Entendimiento del Gitflow y de metodologías agiles como SCRUM. Siempre estoy intentando mejorar y aprender. 
+                Tengo 19 años. Egresado del Colegio Apdes Pucara y del bootcamp Soy Henry como Full Stack Web Developer. Actualmente estoy trabajando como desarrollador de FrontEnd en <Link to={"https://lab9.co/"}>Lab9 Agencia digital</Link>. Siempre estoy intentando mejorar y aprender
                 </p>
             </div>
 
