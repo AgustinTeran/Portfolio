@@ -12,6 +12,7 @@ var arrayTecnologias = [
     "DaisyUI",
     "Express",
     "Node.js",
+    "JWT",
     "Sequelize",
     "PostgreSQL",
     "SQL",
