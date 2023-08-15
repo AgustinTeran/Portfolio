@@ -8,7 +8,7 @@ var arrayProyectos = [
     {
         name: "Videogames",
         img: videoGames,
-        link: "https://pi-videogames-lovat.vercel.app/"
+        link: "https://pi-videogames-lake.vercel.app/"
     },
     {
         name: "Techno Trade",
