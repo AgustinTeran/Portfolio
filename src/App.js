@@ -6,12 +6,14 @@ import Nav from './components/nav';
 import Proyects from './components/proyects';
 import Technologies from './components/technologies';
 import "./styles/index.scss"
+import WorkingExperiencie from './components/workingExperiencie';
 
 function App() {
   return (
     <>
     <About/>
     <Education/>
+    <WorkingExperiencie/>
     <Proyects/>
     <Technologies/>
     <ContactMe/>

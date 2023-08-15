@@ -38,7 +38,7 @@ export default function Proyects(){
                     arrayProyectos.map((e,i) => {
                         return (
                             <div key={i}>
-                                <a href={e.link}><img src={e.img} alt={e.name} /></a>
+                                <a href={e.link} target="_blank"><img src={e.img} alt={e.name} /></a>
                                 <h4>{e.name}</h4>
                             </div>
                         )
