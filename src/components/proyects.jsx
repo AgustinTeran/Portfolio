@@ -3,17 +3,18 @@ import moviePop from "../assets/moviePop.png";
 import technoTrade from "../assets/technoTrade.png";
 import videoGames from "../assets/videoGames.png";
 import instajram from "../assets/instajram.png";
+import tucumida from "../assets/tucumida.png";
 
 var arrayProyectos = [
     {
-        name: "Videogames",
-        img: videoGames,
-        link: "https://pi-videogames-lake.vercel.app/"
+        name: "Tucumida",
+        img: tucumida,
+        link: "https://tucumida.com.ar/"
     },
     {
-        name: "Techno Trade",
-        img: technoTrade,
-        link: "https://front-wheat-gamma.vercel.app/"
+        name: "Red Social",
+        img: instajram,
+        link: "https://instajram.vercel.app/"
     },
     {
         name: "MoviePop",
@@ -21,11 +22,15 @@ var arrayProyectos = [
         link: "https://moviepop-three.vercel.app/"
     },
     {
-        name: "Red Social",
-        img: instajram,
-        link: "https://instajram.vercel.app/"
+        name: "Techno Trade",
+        img: technoTrade,
+        link: "https://front-wheat-gamma.vercel.app/"
     },
-    
+    {
+        name: "Videogames",
+        img: videoGames,
+        link: "https://pi-videogames-lake.vercel.app/"
+    }  
 ]
 
 
@@ -44,6 +49,7 @@ export default function Proyects(){
                         )
                     })
                 }
+                <div></div>
             </div>
         </div>
     )

@@ -17,7 +17,8 @@ export default function About(){
             <div className="section sobreMi">
                 <h3>Sobre Mí</h3>
                 <p>
-                Tengo 19 años, soy Full Stack Web Developer egresado del bootcamp Soy Henry. Cuento con casi 1 año de experiencia como desarrollador web. Siempre con ganas de aprender y de mejorar.
+                Soy Full Stack Web Developer egresado del bootcamp Soy Henry. Cuento con 1 año de experiencia como desarrollador web. Siempre con ganas de aprender y mejorar.
+
                 </p>
             </div>
 

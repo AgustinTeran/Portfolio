@@ -6,6 +6,7 @@ var arrayTecnologias = [
     "CSS",
     "HTML",
     "React",
+    "Next.js",
     "Redux",
     "SCSS",
     "Tailwind",
