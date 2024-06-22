@@ -1,0 +1,27 @@
+---
+import Github from "../../assets/icons/DeviconGithub.astro";
+import Linkedin from "../../assets/icons/BiLinkedin.astro";
+import CV from "../../assets/files/AgustinTeran-Javascript.pdf";
+---
+
+<div class="flex flex-col items-center justify-center" id="about">
+  <h1 class="text-4xl font-bold mt-14">Agustín José Terán</h1>
+  <h2 class="font-light mt-2">Full Stack Developer</h2>
+  <div class="flex gap-5 items-center mt-10">  
+      <a class="hover:opacity-50" href="https://www.linkedin.com/in/agust%C3%ADn-jos%C3%A9-ter%C3%A1n-41aa64244/" target={"_blank"}>
+        <Linkedin class="h-7 w-7"/>
+      </a>
+      <a class="py-1 px-2 border-[1.8px] text-2xl text-black border-black rounded-lg hover:opacity-50" href={CV} download>Descargar CV</a>
+      <a class="hover:opacity-50" href="https://github.com/AgustinTeran" target={"_blank"}>
+        <Github class="h-7 w-7"/>
+      </a>
+  </div>
+  <div>
+      <h3 class="text-2xl font-bold mt-14 mb-3">Sobre Mí</h3>
+      <p>
+      Soy Full Stack Web Developer egresado del bootcamp Soy Henry. Cuento con más de 1 año de experiencia como desarrollador web. Siempre con ganas de aprender y mejorar.
+
+      </p>
+  </div>
+
+</div>

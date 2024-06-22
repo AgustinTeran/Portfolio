@@ -1,0 +1,32 @@
+---
+var arrayTecnologias = [
+    "Javascript",
+    "CSS",
+    "HTML",
+    "React",
+    "Next.js",
+    "Astro",
+    "Redux",
+    "SCSS",
+    "Tailwind",
+    "DaisyUI",
+    "Express",
+    "Node.js",
+    "JWT",
+    "Sequelize",
+    "PostgreSQL",
+    "SQL",
+    "Git",
+    "Github"
+]
+---
+
+
+<div class="mt-10" id="technologies">
+  <h3 class="text-2xl font-bold">Tecnologías</h3>
+  <ul class="mt-8 list-inside list-disc ">
+      {
+          arrayTecnologias.map((e,i) => <li>{e}</li>)
+      }
+  </ul>
+</div>
