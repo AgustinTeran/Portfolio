@@ -1,0 +1,31 @@
+---
+var arrayTecnologias = [
+    "Javascript",
+    "CSS",
+    "HTML",
+    "React",
+    "Next.js",
+    "Redux",
+    "SCSS",
+    "Tailwind",
+    "DaisyUI",
+    "Express",
+    "Node.js",
+    "JWT",
+    "Sequelize",
+    "PostgreSQL",
+    "SQL",
+    "Git",
+    "Github"
+]
+---
+
+
+<div class="section technologiesContainer" id="technologies">
+  <h3>Tecnologias</h3>
+  <ul>
+      {
+          arrayTecnologias.map((e,i) => <li>{e}</li>)
+      }
+  </ul>
+</div>
