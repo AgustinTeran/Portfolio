@@ -1,52 +1,52 @@
 ---
-// import moviePop from "../assets/moviePop.png";
-// import technoTrade from "../assets/technoTrade.png";
-// import videoGames from "../assets/videoGames.png";
-// import instajram from "../assets/instajram.png";
-// import tucumida from "../assets/tucumida.png";
+import moviePop from "../../assets/images/moviePop.png";
+import technoTrade from "../../assets/images/technoTrade.png";
+import videoGames from "../../assets/images/videoGames.png";
+import instajram from "../../assets/images/instajram.png";
+import tucumida from "../../assets/images/tucumida.png";
 
 var arrayProyectos = [
     {
         name: "Tucumida",
-        // img: tucumida,
+        img: tucumida,
         link: "https://tucumida.com.ar/"
     },
     {
         name: "Red Social",
-        // img: instajram,
+        img: instajram,
         link: "https://instajram.vercel.app/"
     },
     {
         name: "MoviePop",
-        // img: moviePop,
+        img: moviePop,
         link: "https://moviepop-three.vercel.app/"
     },
     {
         name: "Techno Trade",
-        // img: technoTrade,
+        img: technoTrade,
         link: "https://front-wheat-gamma.vercel.app/"
     },
     {
         name: "Videogames",
-        // img: videoGames,
+        img: videoGames,
         link: "https://pi-videogames-lake.vercel.app/"
     }  
 ]
 ---
 
-<div class="section proyectsContainer" id="proyects">
-  <h3>Proyectos</h3>
-  <div class="proyects">
+<div class="mt-10" id="proyects">
+  <h3 class="text-2xl font-bold">Proyectos</h3>
+  <div class="mt-8 flex flex-wrap gap-5 items-start">
       {
           arrayProyectos.map((e,i) => {
               return (
-                  <div>
-                      {/* <a href={e.link} target="_blank"><img src={e.img} alt={e.name} /></a> */}
-                      <h4>{e.name}</h4>
+                  <div class="gap-2 flex flex-col items-center flex-1 min-w-[300px]  hover:opacity-50">
+                      <a class="w-full bg-gray-100 rounded-[8px]" style={{border:"solid 1px gray"}} href={e.link} target="_blank"><img  class="h-[300px] object-scale-down mx-auto" src={e.img.src} alt={e.name} /></a>
+                      <h4 class="text-lg font-bold">{e.name}</h4>
                   </div>
               )
           })
       }
-      <div></div>
+      <div class="flex-1 min-w-[300px]"></div>
   </div>
 </div>

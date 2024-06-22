@@ -7,24 +7,41 @@ import Technologies from "../components/customs/technologies.astro";
 import Contact from "../components/customs/contact.astro";
 import Nav from "../components/layout/nav.astro";
 import "../assets/styles/index.css";
+import Logo from "../assets/images/logo.jpg";
 
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href={Logo.src} />
+    <title>Agustín José Terán</title>
+    <meta
+      name="keywords"
+      content="Full Stack, Full Stack Developer, Agustin Teran, Agustín Terán, Agustin Jose Teran, Full Stack Web Developer, Portfolio, JavaScript, Css, Html, React, Redux, Sass, Node, Express, Sequelize, Postgres, PostgreSQL, Git, Github"
+    />
+    <meta
+      name="description"
+      content="Portfolio de Agustín José Terán, Full Stack Web Developer con conocimiento en JavaScript, React, Redux, Node, Express, etc."
+    />
+    <meta
+      name="robots"
+      content="Index"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="robots"  content="index,follow"  />
 	</head>
-	<body class="max-w-3xl mx-auto">
+	<body class="max-w-3xl mx-auto relative px-3">
+		<Nav />
+
 		<About />
 		<Education />
 		<WorkingExperience />
 		<Proyects />
 		<Technologies />
 		<Contact />
-		<Nav />
 	</body>
 </html>

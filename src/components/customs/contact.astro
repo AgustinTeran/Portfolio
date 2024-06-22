@@ -3,21 +3,18 @@ import WhatsApp from "../../assets/icons/IcBaselineWhatsapp.astro"
 import Email from "../../assets/icons/PhEnvelope.astro"
 ---
 
-<div class="contactContainer section" id="contact">
-  <h3>Contacto</h3>
-  <div class="contact">
-      <div>
-          <!-- <TfiEmail class="mail"/> -->
-           <!-- <i class="devicon-gmail-plain text-3xl"></i> -->
-            <Email class="w-8 h-8"/>
+<div class="mt-14 flex flex-col items-center mb-28 sm:mb-14" id="contact">
+  <h3 class="text-2xl font-bold">Contacto</h3>
+  <div class="flex gap-5 flex-wrap mt-8 justify-evenly w-full">
+      <div class="flex flex-col gap-2 items-center justify-center font-bold">
+          <Email class="w-9 h-9"/>
           <h4>Email</h4>
-          <h5>agustintern@gmail.com</h5>
+          <h5 class="border-t border-gray-400 py-3 w-full text-center">agustintern@gmail.com</h5>
       </div>
-      <div>
-          <WhatsApp class="w-8 h-8"/>
-          
+      <div class="flex flex-col gap-2 items-center justify-center font-bold">
+          <WhatsApp class="w-9 h-9"/>
           <h4>Número / Whatsapp</h4>
-          <h5>381-5307732</h5>
+          <h5 class="border-t border-gray-400 py-3 w-full text-center">381-5307732</h5>
       </div>
   </div>
 </div>
