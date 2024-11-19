@@ -1,0 +1,45 @@
+---
+import Logo from "../../assets/images/logo.jpg";
+import Nav from "../../components/layout/nav.astro";
+import "../../assets/styles/index.css";
+
+// import { ViewTransitions } from 'astro:transitions';
+
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href={Logo.src} />
+    <title>{title}</title>
+    <meta
+      name="keywords"
+      content="Full Stack, Full Stack Developer, Agustin Teran, Agustín Terán, Agustin Jose Teran, Full Stack Web Developer, Portfolio, JavaScript, Css, Html, React, Redux, Sass, Node, Express, Sequelize, Postgres, PostgreSQL, Git, Github"
+    />
+    <meta
+      name="description"
+      content="Portfolio de Agustín José Terán, Full Stack Web Developer con conocimiento en JavaScript, React, Redux, Node, Express, etc."
+    />
+    <meta
+      name="robots"
+      content="Index"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="robots"  content="index,follow"  />
+    <script src="../../../aosConfig.js"></script>
+    <!-- <ViewTransitions /> -->
+	</head>
+	<body class="max-w-7xl mx-auto relative custom-gradient text-gray-200"> 
+    <Nav />
+		<slot />
+	</body>
+</html>

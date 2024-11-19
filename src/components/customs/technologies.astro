@@ -1,32 +1,96 @@
 ---
+import Javascript from "../../assets/icons/DeviconJavascript.astro";
+import CSS from "../../assets/icons/DeviconCss3.astro";
+import HTML from "../../assets/icons/DeviconHtml5.astro";
+import React from "../../assets/icons/SkillIconsReactLight.astro";
+import Next from "../../assets/icons/LogosNextjsIcon.astro";
+import AstroLogo from "../../assets/icons/DeviconAstro.astro";
+import Redux from "../../assets/icons/LogosRedux.astro";
+import Tailwind from "../../assets/icons/SkillIconsTailwindcssLight.astro";
+import Express from "../../assets/icons/SkillIconsExpressjsLight.astro";
+import Node from "../../assets/icons/LogosNodejsIconAlt.astro";
+import JWT from "../../assets/icons/LogosJwtIcon.astro";
+import Sequelize from "../../assets/icons/LogosSequelize.astro";
+import PostgreSQL from "../../assets/icons/DeviconPostgresql.astro";
+import Git from "../../assets/icons/DeviconGit.astro";
+
 var arrayTecnologias = [
-    "Javascript",
-    "CSS",
-    "HTML",
-    "React",
-    "Next.js",
-    "Astro",
-    "Redux",
-    "SCSS",
-    "Tailwind",
-    "DaisyUI",
-    "Express",
-    "Node.js",
-    "JWT",
-    "Sequelize",
-    "PostgreSQL",
-    "SQL",
-    "Git",
-    "Github"
-]
+  {
+    name: "Javascript",
+    icon: Javascript,
+  },
+  {
+    name: "CSS",
+    icon: CSS,
+  },
+  {
+    name: "HTML",
+    icon: HTML,
+  },
+  {
+    name: "React",
+    icon: React,
+  },
+  {
+    name: "Next.js",
+    icon: Next,
+  },
+  {
+    name: "Astro",
+    icon: AstroLogo,
+  },
+  {
+    name: "Redux",
+    icon: Redux,
+  },
+  {
+    name: "Tailwind",
+    icon: Tailwind,
+  },
+  {
+    name: "Express",
+    icon: Express,
+  },
+  {
+    name: "Node.js",
+    icon: Node,
+  },
+  {
+    name: "JWT",
+    icon: JWT,
+  },
+  {
+    name: "Sequelize",
+    icon: Sequelize,
+  },
+  {
+    name: "PostgreSQL",
+    icon: PostgreSQL,
+  },
+  {
+    name: "Git",
+    icon: Git,
+  },
+];
+
 ---
 
 
-<div class="mt-10" id="technologies">
-  <h3 class="text-2xl font-bold">Tecnologías</h3>
-  <ul class="mt-8 list-inside list-disc ">
-      {
-          arrayTecnologias.map((e,i) => <li>{e}</li>)
-      }
-  </ul>
+<div class="my-16">
+  <h3 class="text-4xl pl-3 my-8 font-bold">Tecnologías</h3>
+  <div class="flex flex-wrap justify-center gap-x-4 gap-y-10">
+    {
+      arrayTecnologias.map((e,i) => (
+        <div  data-aos="zoom-in" class="flex flex-col items-center relative technologies-container">
+          {/* <div class="absolute top-0 w-full flex items-center backdrop-blur-sm justify-center bg-[#0009] rounded h-full opacity-0 hover:opacity-100 transition-all duration-300 ease-in">
+          </div> */}
+          <div class="absolute top-0 w-full h-full flex items-center justify-center">
+            <span class="font-bold text-xl hidden">{e.name}</span>
+          </div>
+          <e.icon class="size-24 md:size-32 transition-all duration-300 ease-in-out" />
+        </div>
+      ))
+    }
+
+  </div>
 </div>

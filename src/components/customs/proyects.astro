@@ -1,52 +1,71 @@
 ---
-import moviePop from "../../assets/images/moviePop.png";
-import technoTrade from "../../assets/images/technoTrade.png";
-import videoGames from "../../assets/images/videoGames.png";
-import instajram from "../../assets/images/instajram.png";
-import tucumida from "../../assets/images/tucumida.png";
+import moviePop from "../../assets/images/moviepop.webp";
+import technoTrade from "../../assets/images/technoTrade.webp";
+import videoGames from "../../assets/images/videoGames.webp";
+import instajram from "../../assets/images/instajram.webp";
+import tucumida from "../../assets/images/tucumida.webp";
+import agroAccion from "../../assets/images/AgroAccion.webp";
+
+import Swipper from "../react/swiper";
 
 var arrayProyectos = [
     {
+        name: "AgroAccion",
+        img: agroAccion,
+        link: "https://tucumida.com.ar/",
+        description: "Desarrollo freelance de una aplicación web para la empresa AgroAcción. Se automatizó el proceso de generar cotizaciones en PDF y llevar un registro de las mismas."
+    },
+    {
         name: "Tucumida",
         img: tucumida,
-        link: "https://tucumida.com.ar/"
+        link: "https://tucumida.com.ar/",
+        description: "Desarrollo de una aplicación de restaurantes en Tucumán, Argentina. Diseñada para practicar SSR y SEO en Next.js."
     },
     {
         name: "Red Social",
         img: instajram,
-        link: "https://instajram.vercel.app/"
+        link: "https://instajram.vercel.app/",
+        description: "Desarrollo individual de una red social, incluyendo un sistema de chat en tiempo real."
     },
     {
         name: "MoviePop",
         img: moviePop,
-        link: "https://moviepop-three.vercel.app/"
+        link: "https://moviepop-three.vercel.app/",
+        description: "Desarrollo de una aplicación de serie de televisión como prueba técnica para una entrevista de trabajo."
     },
     {
         name: "Techno Trade",
         img: technoTrade,
-        link: "https://front-wheat-gamma.vercel.app/"
+        link: "https://front-wheat-gamma.vercel.app/",
+        description: "Desarrollo grupal de un e-commerce de productos tecnológicos durante el bootcamp Soy Henry."
     },
     {
         name: "Videogames",
         img: videoGames,
-        link: "https://pi-videogames-lake.vercel.app/"
+        link: "https://pi-videogames-lake.vercel.app/",
+        description: "Desarrollo individual de una aplicación de videojuegos durante el bootcamp Soy Henry"
     }  
 ]
+
 ---
 
-<div class="mt-10" id="proyects">
-  <h3 class="text-2xl font-bold">Proyectos</h3>
-  <div class="mt-8 flex flex-wrap gap-5 items-start">
+<section class="mt-28 mb-10" id="proyects">
+  <h3 class="text-4xl mb-8 pl-3 font-bold">Proyectos</h3>
+  <div>
+    <Swipper client:load slideArray={arrayProyectos.map((item) => item)}>
+    </Swipper>
+  </div>
+  <!-- <div class="mt-8 flex flex-col gap-5 items-start">
       {
           arrayProyectos.map((e,i) => {
               return (
                   <div class="gap-2 flex flex-col items-center flex-1 min-w-[300px]  hover:opacity-50">
-                      <a class="w-full bg-gray-100 rounded-[8px]" style={{border:"solid 1px gray"}} href={e.link} target="_blank"><img  class="h-[300px] object-scale-down mx-auto" src={e.img.src} alt={e.name} /></a>
+                      <a class="w-full bg-gray-100 rounded-[8px]" style={{border:"solid 1px gray"}} href={`/${e.name}`}><img transition:name={`${e.name}-img`} class="h-[300px] object-scale-down mx-auto" src={e.img.src} alt={e.name} /></a>
                       <h4 class="text-lg font-bold">{e.name}</h4>
                   </div>
               )
           })
       }
       <div class="flex-1 min-w-[300px]"></div>
-  </div>
-</div>
+  </div> -->
+</section>

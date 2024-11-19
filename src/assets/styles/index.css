@@ -1,7 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body{
   font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+::selection {
+  background-color: #0a0e3c;  /* Color de fondo al seleccionar */
+  color: #c94203;               /* Color del texto al seleccionar */
 }
 
 html{
   scroll-behavior: smooth;
+}
+
+.custom-gradient {
+  background: linear-gradient(
+    to right,
+    #083344 0%,     /* Primer color en el 0% */
+    #030303 15%,       /* Segundo color negro en el 25% */
+    #030303 85%,       /* Más negro en el 75% */
+    #042F23 100% /* Tercer color en el 100% */
+  );
+}
+
+a{
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #042F23;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.technologies-container:hover{
+  span{
+    display: block;
+    z-index: 10;
+    text-shadow: #000 0px 0px 5px;
+  }
+
+  svg{
+    filter: blur(4px);
+    opacity: .8;
+  }
 }
