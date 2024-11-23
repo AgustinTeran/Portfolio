@@ -29,10 +29,10 @@ export default ({slideArray}) => {
           <SwiperSlide key={index} className='cursor-grab w-full open:cursor-grabbing'>
             <div className='flex py-4 justify-center items-center rounded-lg shadow-md'>
               <div className='relative'>
-                <img src={item.img.src} alt={item.name} className='min-h-[400px] object-cover aspect-[1919/950]' />
+                <img src={item.img.src} alt={item.name} className='min-h-[400px] max-w-[1063.33px] w-full object-cover aspect-[1919/950]' />
                 <div data-aos="fade-on" className='backdrop-blur-sm py-8 px-3 md:px-4 flex flex-col gap-4 absolute top-0 right-0 w-[60%] h-full bg-[#000000b8] text-white z-10'>
-                  <h2 className='text-3xl'>{item.name}</h2>
-                  <p>{item.description}</p>
+                  <h2 className='text-3xl md:font-semibold'>{item.name}</h2>
+                  <p className='md:text-lg'>{item.description}</p>
                 </div>  
               </div>
             </div>

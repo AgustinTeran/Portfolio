@@ -51,7 +51,8 @@ a{
   }
 
   svg{
-    filter: blur(4px);
-    opacity: .8;
+    filter: blur(4px) brightness(.5);
+    opacity: 1;
+    
   }
 }

@@ -3,7 +3,7 @@ import Logo from "../../assets/images/logo.jpg";
 import Nav from "../../components/layout/nav.astro";
 import "../../assets/styles/index.css";
 
-// import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions';
 
 
 interface Props {
@@ -36,7 +36,7 @@ const { title } = Astro.props;
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="robots"  content="index,follow"  />
     <script src="../../../aosConfig.js"></script>
-    <!-- <ViewTransitions /> -->
+    <ViewTransitions />
 	</head>
 	<body class="max-w-7xl mx-auto relative custom-gradient text-gray-200"> 
     <Nav />
