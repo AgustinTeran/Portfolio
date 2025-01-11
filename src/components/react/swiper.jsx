@@ -127,6 +127,9 @@ export default ({ slideArray, children }) => {
         onMouseOut={() => {
           scrollToSlide(slideIndex);
         }}
+        onTouchEnd={() => {
+          scrollToSlide(slideIndex);
+        }}
         // onScroll={}
         className="flex w-full relative carrusel h-full min-h-[400px] overflow-x-scroll gap-4 scroll-smooth scrollbar-none"
       >
