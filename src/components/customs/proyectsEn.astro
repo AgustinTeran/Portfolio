@@ -1,0 +1,56 @@
+---
+import moviePop from "../../assets/images/moviepop.webp";
+import technoTrade from "../../assets/images/technoTrade.webp";
+import videoGames from "../../assets/images/videoGames.webp";
+import instajram from "../../assets/images/instajram.webp";
+import tucumida from "../../assets/images/tucumida.webp";
+import agroAccion from "../../assets/images/AgroAccion.webp";
+
+import Swipper from "../react/swiper";
+
+import { arrayProyectos } from "./proyects.astro";
+
+---
+
+<section class="mt-28 mb-10" id="proyects">
+  <h3 class="text-4xl mb-8 pl-3 font-bold">Proyects</h3>
+  <div>
+    <Swipper client:load slideArray={arrayProyectos.map((item) => item)}>
+        {arrayProyectos.map((item, index) => (
+            <div class="w-[90%] max-w-[1208px] relative flex-shrink-0"> 
+              <img
+                transition:name={`${item.name}-img`}
+                src={item.img.src}
+                class="aspect-[1919/950] w-full h-full object-cover"
+                alt={item.name}
+              />
+              <div class='backdrop-blur-sm py-8 px-3 md:px-4 flex flex-col gap-4 absolute top-0 right-0 w-[60%] h-full bg-[#000000b8] text-white z-10'>
+                  {/* <h2 transition:name={`${item.name}-title`} class='flex intems-center gap-3 flex-wrap text-3xl md:font-semibold'>
+                    {item.name}
+                    <a class="text-base underline text-blue-500 flex gap-1 items-center hover:opacity-60" href={`/${item.name}`}>
+                    <span>Ver detalles</span>
+                    <VisitSite class="size-5"/>
+                    </a>
+                    </h2> */}
+                    <a transition:name={`${item.name}-title`} href={`/en/${item.name}`} class="underline z-30 hover:text-orange-500 text-3xl md:font-semibold">{item.name}</a>
+                  <p transition:name={`${item.name}-desc`} class='md:text-lg'>{item.enDescription}</p>
+                  
+              </div> 
+            </div>
+          ))}
+    </Swipper>
+  </div>
+  <!-- <div class="mt-8 flex flex-col gap-5 items-start">
+      {
+          arrayProyectos.map((e,i) => {
+              return (
+                  <div class="gap-2 flex flex-col items-center flex-1 min-w-[300px]  hover:opacity-50">
+                      <a class="w-full bg-gray-100 rounded-[8px]" style={{border:"solid 1px gray"}} href={`/${e.name}`}><img transition:name={`${e.name}-img`} class="h-[300px] object-scale-down mx-auto" src={e.img.src} alt={e.name} /></a>
+                      <h4 class="text-lg font-bold">{e.name}</h4>
+                  </div>
+              )
+          })
+      }
+      <div class="flex-1 min-w-[300px]"></div>
+  </div> -->
+</section>
