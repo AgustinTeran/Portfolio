@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Left from "../../assets/icons/Left";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -111,9 +112,9 @@ export default ({ slideArray, children }) => {
       {/* Botón Izquierdo */}
       <button
         onClick={scrollLeft}
-        className="z-30 absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700"
+        className="z-30 absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white py-3 px-2 rounded-full hover:bg-gray-700"
       >
-        &#9664;
+        <Left className="size-6"/>
       </button>
 
       {/* Carrusel */}
@@ -136,9 +137,9 @@ export default ({ slideArray, children }) => {
       {/* Botón Derecho */}
       <button
         onClick={scrollRight}
-        className="z-30 absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700"
+        className="z-30 absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white py-3 px-2 rounded-full hover:bg-gray-700"
       >
-        &#9654;
+        <Left className="size-6 rotate-180"/>
       </button>
     </div>
   );
