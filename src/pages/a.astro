@@ -1,0 +1,61 @@
+<section class="scene">
+  <div class="panel backdrop-blur-sm left"></div>
+  <div class="panel backdrop-blur-sm left-2"></div>
+  <div class="panel backdrop-blur-sm right"></div>
+  <div class="panel backdrop-blur-sm right-2"></div>
+</section>
+
+<style>
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: black;
+}
+
+.scene {
+  width: 300px;
+  height: 300px;
+  perspective: 800px; /* Punto de fuga */
+}
+
+.panel {
+  position: absolute;
+  width: 100px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  transform-origin: center;
+}
+
+.panel.left {
+  background-color: rgba(29, 29, 61, 0.259);
+  left: 0;
+  transform: rotateY(45deg) translateX(-50px);
+}
+
+.panel.left-2 {
+  background-color: rgb(198, 198, 3);
+  left: -40px;
+  transform: rotateY(45deg) translateX(-50px);
+}
+
+.panel.right {
+  background-color: rgb(29, 29, 61);
+  right: 0;
+  transform: rotateY(-45deg) translateX(50px);
+}
+
+.panel.right-2 {
+  background-color: rgba(198, 198, 3, 0.214);
+  right: -40px;
+  transform: rotateY(-45deg) translateX(50px);
+}
+
+div:hover{
+  scale: 1.1;
+  transition: all 0.5s ease;
+}
+</style>

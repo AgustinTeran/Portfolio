@@ -1,9 +1,11 @@
 ---
 import WhatsApp from "../../assets/icons/IcBaselineWhatsapp.astro"
 import Email from "../../assets/icons/PhEnvelope.astro"
+import Copy from "../../assets/icons/Copy2.astro"
+import Send from "../../assets/icons/Send.astro"
 ---
 
-<div class="mt-14 flex flex-col items-center mb-28 sm:mb-14" id="contact">
+<!-- <div class="mt-14 flex flex-col items-center mb-28 sm:mb-14" id="contact">
   <h3 class="text-2xl font-bold">Contacto</h3>
   <div class="flex gap-5 flex-wrap mt-8 justify-evenly w-full">
       <div class="flex flex-col gap-2 items-center justify-center font-bold">
@@ -17,4 +19,67 @@ import Email from "../../assets/icons/PhEnvelope.astro"
           <h5 class="border-t border-gray-400 py-3 w-full text-center">381-5307732</h5>
       </div>
   </div>
+</div> -->
+
+<div class="my-16">
+  <h3 class="text-4xl pl-3 my-8 font-bold">Contactame</h3>
+  <div class="flex gap-5 items-center justify-center mt-10 flex-wrap px-4">
+
+    <h4 class="text-2xl sm:text-3xl">agustintern@gmail.com</h4>
+    <div class="flex gap-2 flex-wrap justify-center">
+      <button id="copyButton" class="relative py-2 px-3 border-[1.8px] text-lg sm:text-2xl flex gap-1 rounded-lg hover:text-orange-500 hover:border-orange-500">
+        <span class="status-message absolute -top-7 left-0 text-base pl-2 text-gray-300 opacity-80 w-full text-left"></span>
+        
+        <Copy class="size-6 sm:size-7"/>
+        Copiar Email
+      </button>
+      <a target="_blank" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${"agustintern@gmail.com"}&su=${"Oportunidad Laboral"}`} class="py-2 px-3 border-[1.8px] text-lg sm:text-2xl flex gap-1 rounded-lg hover:text-orange-500 hover:border-orange-500">
+        <Send class="size-6 sm:size-7"/>
+        Enviar Email
+      </a>
+    </div>
+  </div>
 </div>
+<script>
+
+var copyButton = document.getElementById("copyButton");
+var statusMessage = document.querySelector(".status-message");
+
+copyButton.addEventListener("click", () => {
+      
+      navigator.clipboard.writeText("agustintern@gmail.com")
+        .then(() => {
+          statusMessage.textContent = "Texto copiado!";
+          setTimeout(() => statusMessage.textContent = "", 2000); // Borra el mensaje después de 2 segundos
+        })
+        .catch(err => {
+          statusMessage.textContent = "Error al copiar el texto.";
+          console.error("Error:", err);
+        });
+    });
+
+document.addEventListener("astro:after-swap", () => {
+  
+  var copyButton = document.getElementById("copyButton");
+  var statusMessage = document.querySelector(".status-message");
+  
+  if(copyButton){
+
+
+    copyButton.addEventListener("click", () => {
+      
+        navigator.clipboard.writeText("agustintern@gmail.com")
+          .then(() => {
+            statusMessage.textContent = "Texto copiado!";
+            setTimeout(() => statusMessage.textContent = "", 2000); // Borra el mensaje después de 2 segundos
+          })
+          .catch(err => {
+            statusMessage.textContent = "Error al copiar el texto.";
+            console.error("Error:", err);
+          });
+      });
+  }
+  
+});
+  
+</script>

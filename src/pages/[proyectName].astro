@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from "astro";
+import { arrayProyectos } from "../components/customs/proyects.astro";
+import Layout from "../components/layout/layout.astro";
+import VisitSite from "../assets/icons/VisitSite.astro";
+import GoBackButton from "../components/react/goBackBtn"
+
+
+export const getStaticPaths = (async() => {
+
+
+return arrayProyectos.map(e => ({
+  params: {proyectName: e.name},
+  props: {img: e.img,link: e.link,description: e.description, largeDescription: e.largeDescription},
+  falback: false
+}))
+
+}) satisfies GetStaticPaths;
+
+
+var {proyectName} = Astro.params
+var {img,link,description,largeDescription} = Astro.props
+---
+
+<Layout title={proyectName}>
+  <div class="flex gap-6 flex-wrap px-[6px] sm:px-5 py-8">
+    <div class="flex-1 basis-[270px] flex flex-col gap-3 pt-5 px-2">
+      <h1 transition:name={`${proyectName}-title`} class="text-4xl gap-y-3 gap-x-4 items-end flex flex-wrap font-semibold">
+        <GoBackButton client:load/>
+        {proyectName}
+        {
+          link && <a class="text-base flex gap-1 items-center text-blue-500 pb-1 underline hover:text-orange-500" target="_blank" href={link}>Visitar sitio <VisitSite class="size-[18px]"/> </a>
+        }
+      </h1>
+      <p transition:name={`${proyectName}-desc`} class="text-lg">{largeDescription}</p>
+    </div>
+    <img class="flex-1 mx-auto aspect-[1919/950] w-full object-cover min-h-[200px] max-w-[660px] rounded-lg" transition:name={`${proyectName}-img`} src={img.src} alt="Proyectos">
+  </div>
+</Layout>
+<script>
+  document.querySelector("button").addEventListener("click", () => {
+    window.history.back();
+  });
+</script>
