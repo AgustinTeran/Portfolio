@@ -29,7 +29,7 @@ var {img,link,enLargeDescription} = Astro.props
         <GoBackButton client:load/>
         {proyectName}
         {
-          link && <a class="text-base flex gap-1 items-center text-blue-500 pb-1 underline hover:text-orange-500" target="_blank" href={link}>Visitar sitio <VisitSite class="size-[18px]"/> </a>
+          link && <a class="text-base flex gap-1 items-center text-blue-500 pb-1 underline hover:text-orange-500" target="_blank" href={link}>Visit the Website <VisitSite class="size-[18px]"/> </a>
         }
       </h1>
       <p transition:name={`${proyectName}-desc`} class="text-lg mt-2">{enLargeDescription}</p>
