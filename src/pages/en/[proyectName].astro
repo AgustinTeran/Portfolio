@@ -11,7 +11,7 @@ export const getStaticPaths = (async() => {
 
 return arrayProyectos.map(e => ({
   params: {proyectName: e.name},
-  props: {img: e.img,link: e.link, enLargeDescription: e.enLargeDescription},
+  props: {img: e.img,link: e.link,technologies: e.technolgies, enLargeDescription: e.enLargeDescription},
   falback: false
 }))
 
@@ -19,7 +19,7 @@ return arrayProyectos.map(e => ({
 
 
 var {proyectName} = Astro.params
-var {img,link,enLargeDescription} = Astro.props
+var {img,link,enLargeDescription,technologies} = Astro.props
 ---
 
 <Layout title={proyectName} lang="en">
