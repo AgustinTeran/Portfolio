@@ -3,6 +3,7 @@ import Github from "../../assets/icons/DeviconGithub.astro";
 import Linkedin from "../../assets/icons/BiLinkedin.astro";
 import Download from "../../assets/icons/Download.astro";
 import CV from "../../assets/files/CV-AgustinTeran-English-Javascript.pdf";
+import CVEspañol from "../../assets/files/CV-AgustinTeran-Javascript.pdf";
 
 
 interface Props {
@@ -19,7 +20,7 @@ const { lang } = Astro.props;
       <a class="hover:text-orange-500 hover:border-orange-500" href="https://www.linkedin.com/in/agust%C3%ADn-jos%C3%A9-ter%C3%A1n-41aa64244/" target={"_blank"}>
         <Linkedin class="h-7 w-7"/>
       </a>
-      <a class="py-2 px-3 border-[1.8px] text-xl md:text-2xl flex gap-1 rounded-lg hover:text-orange-500 hover:border-orange-500" href={CV} download>
+      <a class="py-2 px-3 border-[1.8px] text-xl md:text-2xl flex gap-1 rounded-lg hover:text-orange-500 hover:border-orange-500" href={lang == "es"? CVEspañol : CV} download>
         <Download class="size-6 md:size-7 delay-0"/>
         {lang === "es"? "Descargar CV" : "Download CV"}</a>
       <a class="hover:text-orange-500 hover:border-orange-500" href="https://github.com/AgustinTeran" target={"_blank"}>
