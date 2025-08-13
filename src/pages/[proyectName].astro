@@ -3,42 +3,410 @@ import type { GetStaticPaths } from "astro";
 import { arrayProyectos } from "../components/customs/proyects.astro";
 import Layout from "../components/layout/layout.astro";
 import VisitSite from "../assets/icons/VisitSite.astro";
-import GoBackButton from "../components/react/goBackBtn"
-
+import GoBackButton from "../components/layout/goBackBtn.astro";
 
 export const getStaticPaths = (async() => {
-
-
-return arrayProyectos.map(e => ({
-  params: {proyectName: e.name},
-  props: {img: e.img,link: e.link,technologies: e.technolgies, largeDescription: e.largeDescription},
-  falback: false
-}))
-
+  return arrayProyectos.map(e => ({
+    params: {proyectName: e.name},
+    props: {
+      img: e.img,
+      link: e.link,
+      technologies: e.technolgies, 
+      largeDescription: e.largeDescription,
+      description: e.description,
+      // Datos adicionales que podrías agregar al array
+      fullProject: e,
+      video: e.video
+    },
+    falback: false
+  }))
 }) satisfies GetStaticPaths;
 
-
 var {proyectName} = Astro.params
-var {img,link,technologies,largeDescription} = Astro.props
+var {img, link, technologies, largeDescription, video} = Astro.props
+
+// Función para obtener características del proyecto basado en las tecnologías
+function getProjectFeatures(name, technologies) {
+  const features = [];
+  
+  if (technologies.includes('React') || technologies.includes('Next.js')) {
+    features.push('Interfaz de usuario reactiva y dinámica');
+  }
+  if (technologies.includes('PostgreSQL') || technologies.includes('Sequelize')) {
+    features.push('Base de datos robusta y escalable');
+  }
+  if (technologies.includes('JSON Web Token')) {
+    features.push('Sistema de autenticación seguro');
+  }
+  if (technologies.includes('Socket.io')) {
+    features.push('Funcionalidades en tiempo real');
+  }
+  if (technologies.includes('Stripe')) {
+    features.push('Procesamiento de pagos integrado');
+  }
+  if (technologies.includes('Tailwind')) {
+    features.push('Diseño responsive y moderno');
+  }
+  if (technologies.includes('Astro')) {
+    features.push('Optimizado para SEO y performance');
+  }
+  
+  // Características específicas por proyecto
+  switch(name) {
+    case 'AquaEnergy SAS':
+      features.push('Formulario de contacto funcional', 'Optimización para motores de búsqueda');
+      break;
+    case 'AgroAccion':
+      features.push('Generación automática de PDFs', 'Sistema de gestión de cotizaciones');
+      break;
+    case 'Tucumida':
+      features.push('Mapas interactivos con Leaflet', 'Sistema de registro de restaurantes');
+      break;
+    case 'Red Social':
+      features.push('Sistema de seguimiento de usuarios', 'Chat en tiempo real con notificaciones');
+      break;
+    case 'MoviePop':
+      features.push('Búsqueda de series en tiempo real', 'Lista de favoritos personalizada');
+      break;
+    case 'Techno Trade':
+      features.push('Carrito de compras completo', 'Panel de administración', 'Sistema de reseñas');
+      break;
+    case 'Videogames':
+      features.push('Filtros y búsqueda avanzada', 'Formulario para agregar juegos');
+      break;
+  }
+  
+  return features.slice(0, 6); // Máximo 6 características
+}
+
+const projectFeatures = getProjectFeatures(proyectName, technologies);
+
+// Función para obtener el tipo de proyecto
+function getProjectType(name) {
+  switch(name) {
+    case 'AquaEnergy SAS':
+      return 'Sitio Web Corporativo';
+    case 'AgroAccion':
+      return 'Aplicación Web de Gestión';
+    case 'Tucumida':
+    case 'Red Social':
+    case 'MoviePop':
+    case 'Videogames':
+      return 'Aplicación Web';
+    case 'Techno Trade':
+      return 'E-commerce';
+    default:
+      return 'Proyecto Web';
+  }
+}
+
+const projectType = getProjectType(proyectName);
+
+// Función para determinar si es freelance o personal
+function getProjectCategory(name) {
+  return ['AquaEnergy SAS', 'AgroAccion'].includes(name) ? 'Proyecto Freelance' : 'Proyecto Personal';
+}
+
+const projectCategory = getProjectCategory(proyectName);
 ---
 
 <Layout title={proyectName} lang="es">
-  <div class="flex gap-6 flex-wrap px-[6px] sm:px-5 py-8">
-    <div class="flex-1 basis-[270px] flex flex-col gap-3 pt-5 px-2">
-      <h1 transition:name={`${proyectName}-title`} class="text-4xl gap-y-3 gap-x-4 items-end flex flex-wrap font-semibold">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Header Section -->
+    <header class="mb-12">
+      <div class="flex items-start gap-4 mb-6">
         <GoBackButton client:load/>
-        {proyectName}
+        <div class="flex-1">
+          <h1 transition:name={`${proyectName}-title`} class="text-4xl md:text-5xl font-bold mb-4 text-white">
+            {proyectName}
+          </h1>
+          
+          <!-- Project badges -->
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="bg-gray-800 text-gray-200 px-3 py-1 rounded-full text-sm font-medium border border-gray-600">
+              {projectType}
+            </span>
+            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-medium border border-green-500/30">
+              {projectCategory}
+            </span>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="flex flex-wrap gap-4">
+            <!-- {link && (
+              <a 
+                class="inline-flex items-center gap-2 border border-white text-white px-3 py-2 rounded-lg hover:border-orange-500 hover:text-orange-500 transition-colors font-medium"
+                target="_blank" 
+                href={link}
+              >
+                <VisitSite class="size-5"/> 
+                Ver sitio en vivo
+              </a>
+            )} -->
+            {/* Aquí podrías agregar un enlace a GitHub si lo tienes */}
+            <!-- <a 
+              class="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors font-medium border border-gray-600"
+              target="_blank" 
+              href="#"
+            >
+              GitHub
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="grid lg:grid-cols-3 gap-12">
+      
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Hero Image/Video Section -->
+        <div class="relative overflow-hidden rounded-xl border border-gray-700 shadow-2xl">
+          <div class="relative">
+            <img 
+              transition:name={`${proyectName}-img`}
+              src={img.src} 
+              alt={`Captura de pantalla de ${proyectName}`}
+              class="w-full aspect-[1919/950] object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            
+            <!-- Video Demo Button -->
+            <!-- <div class="absolute inset-0 flex items-center justify-center">
+              <button 
+                id="playVideoBtn"
+                class="bg-black/50 backdrop-blur-sm border border-white/20 text-white p-4 rounded-full hover:bg-black/70 transition-all duration-300 group"
+                title="Ver demo en video"
+              >
+                <svg class="w-8 h-8 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div> -->
+          </div>
+          
+          <!-- Video Modal (hidden by default) -->
+          <div id={`videoModal-${proyectName.split(' ')[0]}`} class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div class="relative w-full max-w-4xl">
+              <button 
+                id="closeVideoBtn"
+                class="absolute -top-12 right-0 text-white hover:text-orange-400 transition-colors"
+              >
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+              
+              <!-- Placeholder para video -->
+               {
+                !video && (
+                  <div class="bg-gray-900 rounded-lg border border-gray-700 aspect-video flex items-center justify-center">
+                    <div class="text-center text-gray-400">
+                      <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                      <p class="text-lg">Video demo próximamente</p>
+                      <!-- <p class="text-sm mt-2">Aquí irá el video de demostración del proyecto</p> -->
+                    </div>
+                  </div>
+                )
+               }
+              
+              
+              <!-- Cuando tengas videos, reemplaza el div de arriba con esto: -->
+              <!-- {
+                video && (
+                  <video 
+                    id="demoVideo"
+                    class="w-auto rounded-lg"
+                    controls
+                    poster={img.src}
+                  >
+                    <source src={video} type="video/mp4">
+                    Tu navegador no soporta el elemento video.
+                  </video>
+                )
+              } -->
+              
+             
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Description -->
+        <section class="prose prose-lg max-w-none">
+          <h2 class="text-2xl font-bold mb-4 text-white">Acerca del proyecto</h2>
+          <p transition:name={`${proyectName}-desc`} class="text-gray-300 leading-relaxed text-lg">
+            {largeDescription}
+          </p>
+        </section>
+
+        <!-- Features Section -->
+        {projectFeatures.length > 0 && (
+          <section>
+            <h2 class="text-2xl font-bold mb-6 text-white">Características principales</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              {projectFeatures.map(feature => (
+                <div class="flex items-start gap-3 p-4 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700">
+                  <span class="text-green-400 mt-0.5 flex-shrink-0">✓</span>
+                  <span class="text-gray-300">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Placeholder para video demo -->
+        <!-- Descomenta esto si agregas videos a tu array de proyectos -->
+        <!-- 
+        {videoUrl && (
+          <section>
+            <h2 class="text-2xl font-bold mb-6">Demo en video</h2>
+            <div class="relative overflow-hidden rounded-xl">
+              <video 
+                class="w-full rounded-lg" 
+                controls
+                poster={img.src}
+              >
+                <source src={videoUrl} type="video/mp4">
+                Tu navegador no soporta el elemento video.
+              </video>
+            </div>
+          </section>
+        )}
+        -->
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        
+        <!-- Project Info -->
+        <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+          <h3 class="text-xl font-bold mb-4 text-white">Información del proyecto</h3>
+          <dl class="space-y-3">
+            <div>
+              <dt class="text-sm font-medium text-gray-400 uppercase tracking-wide">Tipo</dt>
+              <dd class="mt-1 text-gray-200">{projectType}</dd>
+            </div>
+            <div>
+              <dt class="text-sm font-medium text-gray-400 uppercase tracking-wide">Categoría</dt>
+              <dd class="mt-1 text-gray-200">{projectCategory}</dd>
+            </div>
+            <div>
+              <dt class="text-sm font-medium text-gray-400 uppercase tracking-wide">Estado</dt>
+              <dd class="mt-1">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30">
+                  Completado
+                </span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Technologies -->
+        <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+          <h3 class="text-xl font-bold mb-4 text-white">Tecnologías utilizadas</h3>
+          <div class="flex flex-wrap gap-2">
+            {technologies.map(tech => (
+              <span class="bg-gray-700/70 text-gray-200 px-3 py-1.5 rounded-lg text-sm font-medium border border-gray-600 hover:bg-gray-600/70 transition-colors">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Quick Links -->
         {
-          link && <a class="text-base flex gap-1 items-center text-blue-500 pb-1 underline hover:text-orange-500" target="_blank" href={link}>Visitar sitio <VisitSite class="size-[18px]"/> </a>
+          link && (
+            <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+              <h3 class="text-xl font-bold mb-4 text-white">Enlaces</h3>
+              <div class="space-y-3">
+                
+                <a 
+                  href={link}
+                  target="_blank"
+                  class="flex items-center gap-3 text-blue-500 hover:text-orange-500 transition-colors p-2 rounded-lg hover:bg-orange-500/10"
+                >
+                  <VisitSite class="size-5"/>
+                  <span class="font-medium">Visitar sitio web</span>
+                </a>
+                
+                <!-- <a 
+                  href="/#proyects"
+                  class="flex items-center gap-3 text-blue-500 hover:text-orange-500 transition-colors p-2 rounded-lg hover:bg-orange-500/10"
+                >
+                  <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0l-4 4m4-4l-4-4"/>
+                  </svg>
+                  <span class="font-medium">Ver más proyectos</span>
+                </a> -->
+              </div>
+            </div>
+          )
         }
-      </h1>
-      <p transition:name={`${proyectName}-desc`} class="text-lg mt-2">{largeDescription}</p>
+        
+
+      </aside>
     </div>
-    <img class="flex-1 mx-auto aspect-[1919/950] w-full object-cover min-h-[200px] max-w-[660px] rounded-lg" transition:name={`${proyectName}-img`} src={img.src} alt="Proyectos">
+
+    <!-- Call to Action -->
+    <section class="mt-16 text-center text-white py-12 px-6 rounded-2xl ">
+      <h2 class="text-3xl font-bold mb-4">¿Te interesa trabajar conmigo?</h2>
+      <p class="text-xl mb-8 opacity-90">Estoy disponible para proyectos freelance y oportunidades de trabajo</p>
+      <a 
+        href="/#contact" 
+        class="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium"
+      >
+        Contactarme
+      </a>
+    </section>
+
   </div>
 </Layout>
-<script>
-  document.querySelector("button").addEventListener("click", () => {
-    window.history.back();
+
+<script type="module">
+  // Video modal functionality
+  var playBtn = document.getElementById('playVideoBtn');
+  let proyectNameJs = decodeURIComponent(window.location.pathname.split('/')[1]).split(' ')[0];
+  console.log(proyectNameJs);
+  
+  var videoModal = document.querySelector(`#videoModal-${proyectNameJs}`);
+  var closeBtn = document.getElementById('closeVideoBtn');
+  
+  playBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    videoModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    document.querySelector("video")?.play();
+  });
+  
+  closeBtn?.addEventListener('click', () => {
+    videoModal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    
+    // Si hay video, pausar cuando se cierre el modal
+    // const video = document.getElementById('demoVideo');
+    // if (video) video.pause();
+  });
+  
+  // Cerrar modal al hacer click fuera del contenido
+  videoModal?.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+      videoModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Cerrar modal con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+      videoModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
   });
 </script>

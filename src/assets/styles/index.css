@@ -26,6 +26,16 @@ html{
   );
 }
 
+.custom-gradient-reverse {
+  background: linear-gradient(
+    to right,
+    #042F23 0%,     /* Primer color en el 0% */
+    #030303 50%,       /* Más negro en el 75% */
+    #083344 100%
+     /* Tercer color en el 100% */
+  );
+}
+
 a,button{
   transition: all 0.2s ease;
 }

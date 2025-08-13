@@ -6,6 +6,7 @@ import instajram from "../../assets/images/instajram.webp";
 import tucumida from "../../assets/images/tucumida.webp";
 import agroAccion from "../../assets/images/AgroAccion.webp";
 import AquaEnergy from "../../assets/images/AquaEnergy.webp";
+import AquaEnergyVideo from "../../assets/videos/AquaEnergyVideo.mp4";
 
 import Swipper from "../react/swiper";
 
@@ -13,72 +14,79 @@ export var arrayProyectos = [
     {
         name:"AquaEnergy SAS",
         img:AquaEnergy,
+        video: AquaEnergyVideo,
         link:"https://www.aquaenergy.com.ar/",
         technolgies:["Astro", "Tailwind", "JavaScript", "Node", "Resend"],
-        description:"Desarrollo freelance de una web estatica para la empresa AquaEnergy SAS.",
-        largeDescription:"Desarrollo freelance de una web estatica para la empresa AquaEnergy SAS. Desarrollada con Astro y optimizada para SEO y la mejor performance. Tambien me encargue de la compra de dominio y la configuracion de la web.",
-        enDescription:"Freelance development of a static website for the AquaEnergy SAS company.",
-        enLargeDescription:"Freelance development of a static website for the AquaEnergy SAS company. Developed with Astro and optimized for SEO and best performance. I also manage the purchase of the domain and the configuration of the website."
+        description:"Desarrollo freelance de una web estática para la empresa AquaEnergy SAS, optimizada para SEO y máxima performance.",
+        largeDescription:"Desarrollo freelance de una web estática para la empresa AquaEnergy SAS. Desarrollada con Astro y optimizada para SEO y máxima performance, logrando tiempos de carga ultra-rápidos. Me encargué del proceso completo: desde el diseño responsive hasta la compra del dominio, configuración del hosting y implementación de formulario de contacto funcional con Resend.",
+        enDescription:"Freelance development of a static website for AquaEnergy SAS company, optimized for SEO and maximum performance.",
+        enLargeDescription:"Freelance development of a static website for AquaEnergy SAS company. Built with Astro and optimized for SEO and maximum performance, achieving ultra-fast loading times. I handled the complete process: from responsive design to domain purchase, hosting configuration, and implementation of a functional contact form with Resend."
     },
     {
         name: "AgroAccion",
         img: agroAccion,
+        video: null,
         link: null,
         technolgies: ["Next.js", "React", "Tailwind", "DaisyUI", "JavaScript", "Node", "Sequelize", "PostgreSQL", "JSON Web Token"],
-        description: "Desarrollo freelance de una aplicación web para la empresa AgroAcción. Se automatizó el proceso de generar cotizaciones en PDF y llevar un registro de las mismas.",
-        largeDescription: "Desarrollo freelance de una aplicación web para la empresa AgroAcción. Se automatizó el proceso de generar cotizaciones en PDF y llevar un registro de las mismas. Anteriormente debian rellenar un PDF de manera manual y llevar un registro por separado de las cotizaciones. Hoy en dia tienen un sistema automático lo cual les simplifica la tarea y les ahorra mucho tiempo.",
-        enDescription: "Freelance development of a web application for the company AgroAcción. The process of generating PDF quotes and keeping a record of them was automated.",
-        enLargeDescription: "Freelance development of a web application for the company AgroAcción. The process of generating PDF quotes and keeping a record of them was automated. Previously, They had to fill a PDF manually and record the quotations separately. Today, it has an automatic system, which makes the task easier and saves a lot of time.",
+        description: "Sistema web que automatiza la generación de cotizaciones en PDF, ahorrando horas de trabajo manual.",
+        largeDescription: "Desarrollo freelance de una aplicación web para la empresa AgroAcción que automatiza completamente el proceso de generación de cotizaciones en PDF y su gestión. Anteriormente debían rellenar PDFs de manera manual y llevar un registro separado de las cotizaciones. El nuevo sistema incluye autenticación segura, base de datos PostgreSQL para almacenamiento, y generación automática de documentos, ahorrando horas de trabajo manual.",
+        enDescription: "Web system that automates PDF quote generation, saving hours of manual work.",
+        enLargeDescription: "Freelance development of a web application for AgroAcción company that completely automates the PDF quote generation and management process. Previously, they had to fill PDFs manually and keep separate records of quotations. The new system includes secure authentication, PostgreSQL database for storage, and automatic document generation, saving hours of manual work.",
     },
     {
         name: "Tucumida",
         img: tucumida,
+        video: null,
         link: "https://next-tucumida-kappa.vercel.app/",
         technolgies: ["Next.js", "React", "Redux", "Tailwind", "DaisyUI", "JavaScript", "Leaflet", "Node", "Express", "Sequelize", "PostgreSQL", "JSON Web Token"],
-        description: "Desarrollo de una aplicación de restaurantes en Tucumán, Argentina. Diseñada para practicar SSR y SEO en Next.js.",
-        largeDescription: "Desarrollo de una aplicación de restaurantes en Tucumán, Argentina. Diseñada para practicar SSR y SEO en Next.js. Cada restaurante puede crearse una cuenta y agregar su restaurante para que los usuarios puedan acceder a su información (Ubicación, Números telefónicos, Redes sociales, etc.)",
-        enDescription: "Development of a Tucuman’s restaurants web application. Designed to practice SSR and SEO in Next.js.",
-        enLargeDescription: "Development of a Tucuman’s restaurants web application. Designed to practice SSR and SEO in Next.js. Every restaurant owner can create an account and add its restaurant to the website, so that users can access its information (Location, Phone numbers, Social networks)"
+        description: "Plataforma web de restaurantes tucumanos con mapas interactivos y sistema de registro para propietarios.",
+        largeDescription: "Desarrollo de una aplicación web completa de restaurantes en Tucumán, Argentina, con enfoque en SSR y SEO optimizado en Next.js. La plataforma incluye mapas interactivos con Leaflet para localización, sistema de autenticación para propietarios de restaurantes, perfiles completos con información de contacto, ubicación y redes sociales. Los restaurantes pueden registrarse y gestionar su información de manera autónoma.",
+        enDescription: "Tucuman restaurants web platform with interactive maps and registration system for owners.",
+        enLargeDescription: "Development of a complete web application for restaurants in Tucuman, Argentina, focused on SSR and SEO optimization with Next.js. The platform includes interactive maps with Leaflet for location, authentication system for restaurant owners, complete profiles with contact information, location and social networks. Restaurants can register and manage their information autonomously."
     },
     {
         name: "Red Social",
         img: instajram,
+        video: null,
         link: "https://instajram.vercel.app/",
-        technolgies: ["React", "Redux", "Tailwind", "DaisyUI", "SCSS", "JavaScript", "Socket.io", "Node", "Express", "Sequelize", "PostgreSQL", "JSON Web Token", "Socket.io"],
-        description: "Desarrollo individual de una red social, incluyendo un sistema de chat en tiempo real.",
-        largeDescription: "Desarrollo individual de una red social, incluyendo un sistema de chat en tiempo real. Fue desarrollada unicamente con el proposito de aprender como funciona un sitema de Seguir/Ser seguido en una red social. Más adelante tambien agregué un sistema de chat con sus respectivas noticaciones con el proposito de aprender Socket IO / Web Sockets",
-        enDescription: "Individual development of a social network, including a real-time chat system.",
-        enLargeDescription: "Individual development of a social network, including a real-time chat system. It was developed with the purpose of learning how the follow/be followed system works in a social network. Later, I also added a chat system and its notifications with the purpose of learning Socket IO / Web Sockets", 
+        technolgies: ["React", "Redux", "Tailwind", "DaisyUI", "SCSS", "JavaScript", "Socket.io", "Node", "Express", "Sequelize", "PostgreSQL", "JSON Web Token"],
+        description: "Red social completa con sistema de seguimiento, chat en tiempo real y notificaciones.",
+        largeDescription: "Desarrollo individual de una red social completa llamada InstajRam, que incluye sistema de seguimiento entre usuarios, chat en tiempo real con Socket.io, y notificaciones instantáneas. La aplicación cuenta con autenticación JWT, base de datos PostgreSQL para gestión de usuarios y mensajes, y prontamente sistema de posts con likes y comentarios. Fue desarrollada para dominar las funcionalidades de seguir/ser seguido y comunicación en tiempo real con WebSockets.",
+        enDescription: "Complete social network with follow system, real-time chat and notifications.",
+        enLargeDescription: "Individual development of a complete social network called InstajRam, including user following system, real-time chat with Socket.io, and instant notifications. The application features JWT authentication, PostgreSQL database for user and message management, and soon a post system with likes and comments. It was developed to master follow/be followed functionalities and real-time communication with WebSockets.",
     },
     {
         name: "MoviePop",
         img: moviePop,
+        video: null,
         link: "https://moviepop-three.vercel.app/",
         technolgies: ["React", "Redux", "SCSS", "JavaScript", "Node", "Express", "Sequelize", "PostgreSQL", "JSON Web Token"],
-        description: "Desarrollo de una aplicación de serie de televisión como prueba técnica para una entrevista de trabajo.",
-        largeDescription: "Desarrollo de una aplicación de serie de televisión como prueba técnica para una entrevista de trabajo. Los usuario no registrados pueden buscar una serie de televisión y ver información de la misma (Descripción, Año de estreno, etc.). Aquellos usuarios registrados, además, pueden agregar series a su lista de favoritos",
-        enDescription: "Development of a television series application as a technical test for a job interview.",
-        enLargeDescription: "Development of a television series application as a technical test for a job interview. Unregistered users can search for any television series and view information about them (Description, Release year, etc.). Registered users, in addition, can add series to their favorite list"
+        description: "Aplicación de series de TV con integración de APIs externas, búsqueda y sistema de favoritos.",
+        largeDescription: "Desarrollo de una aplicación de series de televisión como prueba técnica, integrando APIs externas para obtener información actualizada de series. Los usuarios no registrados pueden buscar cualquier serie y ver información detallada (descripción, año de estreno, cast, etc.). Los usuarios registrados además pueden crear y gestionar su lista personalizada de series favoritas. Incluye sistema de autenticación JWT y base de datos PostgreSQL para persistencia de datos.",
+        enDescription: "TV series application with external API integration, search and favorites system.",
+        enLargeDescription: "Development of a television series application as a technical test, integrating external APIs to get updated series information. Unregistered users can search for any series and view detailed information (description, release year, cast, etc.). Registered users can additionally create and manage their personalized list of favorite series. Includes JWT authentication system and PostgreSQL database for data persistence."
     },
     {
         name: "Techno Trade",
         img: technoTrade,
+        video: null,
         link: "https://front-wheat-gamma.vercel.app/",
         technolgies: ["React", "Redux", "Tailwind", "SCSS", "Stripe", "JavaScript", "Node", "Express", "Sequelize", "PostgreSQL", "Stripe","Nodemailer", "JSON Web Token"],
-        description: "Desarrollo grupal de un e-commerce de productos tecnológicos durante el bootcamp Soy Henry.",
-        largeDescription: "Desarrollo grupal de un e-commerce de productos tecnológicos durante el bootcamp Soy Henry. Orientada tanto al usuario como al administrador. Como usuario puedo realizar compras, dejar reseñas de los productos, etc. Como administrador puedo cargar nuevos productos con su respectivo stock, ver los pedidos realizados, los usuarios, etc.",
-        enDescription: "Group development of an e-commerce of technological products during the Soy Henry bootcamp.",
-        enLargeDescription: "Group development of an e-commerce of technological products during the Soy Henry bootcamp. Oriented both to the user and the administrator. As a user, you can buy, leave reviews of the products, etc. As an administrator, you can load new products with their stock and details, view the orders maded, view the users, etc."
+        description: "E-commerce completo de productos tecnológicos con pasarela de pagos Stripe y panel de administración.",
+        largeDescription: "Desarrollo grupal de un e-commerce completo de productos tecnológicos durante el bootcamp Soy Henry. La plataforma está orientada tanto a usuarios como administradores. Los usuarios pueden realizar compras seguras con Stripe, dejar reseñas de productos, gestionar su carrito y recibir confirmaciones por email con Nodemailer. Los administradores pueden cargar nuevos productos con stock, gestionar inventario, ver pedidos realizados, administrar usuarios y generar reportes de ventas.",
+        enDescription: "Complete tech products e-commerce with Stripe payment gateway and admin panel.",
+        enLargeDescription: "Group development of a complete technological products e-commerce during the Soy Henry bootcamp. The platform is oriented to both users and administrators. Users can make secure purchases with Stripe, leave product reviews, manage their cart and receive email confirmations with Nodemailer. Administrators can load new products with stock, manage inventory, view placed orders, manage users and generate sales reports."
     },
     {
         name: "Videogames",
         img: videoGames,
+        video: null,
         link: "https://pi-videogames-lake.vercel.app/",
         technolgies: ["React", "Redux", "CSS", "JavaScript", "Node", "Express", "Sequelize", "PostgreSQL"],
-        description: "Desarrollo individual de una aplicación de videojuegos durante el bootcamp Soy Henry",
-        largeDescription: "Desarrollo individual de una aplicación de videojuegos durante el bootcamp Soy Henry. Los usuarios pueden buscar, filtrar y ver la información de sus videojuegos favoritos. Tambien, en caso de no encontrar el videojuego que buscan, agregarlos a la base de datos llenando un formulario",
-        enDescription: "Individual development of a video games application during the Soy Henry bootcamp.",
-        enLargeDescription: "Individual development of a video games application during the Soy Henry bootcamp. Users can search, filter and view the information of their favorite videogames. Additionally, if they don't find the game they're looking for, they can add it to the database by simply filling out a form."
+        description: "Aplicación de videojuegos con API externa, filtros avanzados y formulario para agregar nuevos juegos.",
+        largeDescription: "Desarrollo individual de una aplicación de videojuegos durante el bootcamp Soy Henry que consume una API externa para mostrar información detallada de más de 100 videojuegos. Los usuarios pueden buscar, filtrar por género, plataforma y rating, ordenar por diferentes criterios, y ver información completa de cada juego. Además, incluye un formulario controlado para que los usuarios puedan agregar nuevos videojuegos a la base de datos cuando no encuentren el que buscan.",
+        enDescription: "Video games application with external API, advanced filters and form to add new games.",
+        enLargeDescription: "Individual development of a video games application during the Soy Henry bootcamp that consumes an external API to display detailed information of over 100 video games. Users can search, filter by genre, platform and rating, sort by different criteria, and view complete information for each game. Additionally, it includes a controlled form so users can add new video games to the database when they don't find what they're looking for."
     }  
 ]
 
